@@ -24,3 +24,6 @@ spec:
           requests:
             cpu: 25m
             memory: 25Mi
+        envFrom:
+          - secretRef:
+                name: ex-secrets
