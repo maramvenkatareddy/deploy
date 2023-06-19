@@ -11,6 +11,7 @@ pipeline {
             steps {
                 sh 'kubectl config current-context'
                 sh 'kubectl apply -f deploy.yaml'
+                sh 'kubectl apply -f service.yaml'
             }
         }
     }
