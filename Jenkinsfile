@@ -9,7 +9,6 @@ pipeline {
         }
         stage('build the image') {
             steps {
-                sh 'kubectl delete -f external-secrets.yaml'
                 sh 'kubectl rollout restart deployment nginx-deployment'
                 sh 'kubectl config current-context'
                 sh 'kubectl apply -f service.yaml'
