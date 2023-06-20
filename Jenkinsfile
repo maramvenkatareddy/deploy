@@ -9,7 +9,6 @@ pipeline {
         }
         stage('build the image') {
             steps {
-                sh 'kubectl delete -f deploy.yaml'
                 sh 'kubectl apply -f external-secrets.yaml'
                 sh 'kubectl config current-context'
                 sh 'kubectl apply -f deploy.yaml'
