@@ -10,9 +10,8 @@ pipeline {
         stage('build the image') {
             steps {
                 sh 'kubectl apply -f external-secrets.yaml'
-                sh 'kubectl apply -f deploy.yaml'
+                sh 'kubectl rollout restart deployment nginx-deployment'
                 sh 'kubectl config current-context'
-                sh 'kubectl apply -f deploy.yaml'
                 sh 'kubectl apply -f service.yaml'
                 sh 'kubectl apply -f configmap.yaml'
                 sh 'kubectl apply -f hpa.yaml'
