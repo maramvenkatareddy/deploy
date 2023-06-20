@@ -16,6 +16,7 @@ pipeline {
                 sh 'kubectl apply -f service.yaml'
                 sh 'kubectl apply -f configmap.yaml'
                 sh 'kubectl apply -f hpa.yaml'
+                sh 'kubectl get po -A'
             }
         }
     }
